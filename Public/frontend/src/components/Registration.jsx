@@ -98,6 +98,7 @@ const Registration = () => {
         // console.log(name);
         if(validatedate(Dob)){
           console.log("done");
+          // this is me /
           const { status } = await axios.post(
             "/api/users/register",
             { name , email , password , Gender, Dob},
