@@ -203,7 +203,7 @@ setSearchname("");
 const resetall=()=>{
 
 fetchReviews();
-setSearchname("");
+// setSearchname("");
 }
 
 

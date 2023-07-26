@@ -12,15 +12,6 @@ var ava=30;
 
 
 
-let Changereviewtype=()=>{
-    setReviewty(!reviewTy);
-    if(reviewTy){
-      setTransferpg("home")
-    }
-    else{
-      setTransferpg("myreview")
-    }
-}
 
 
 const getUser = async() =>{

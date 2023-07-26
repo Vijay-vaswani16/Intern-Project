@@ -108,7 +108,7 @@ let validate= async (e)=>{
     // console.log(10);
     console.log(review);
     if (review.name.length < 6 ) {
-        alert('Please enter a review with at least 6 characters.');
+        alert('Please enter the Name with at least 6 characters.');
       } else if (review.rating < 1 || review.rating > 5) {
         alert('Please select a rating between 1 and 5.');
       } 

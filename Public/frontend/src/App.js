@@ -18,6 +18,12 @@ function App() {
   let [names , setNames] = useState('')
   const [log, setLog]= useState(true);
 
+  socket.on("connect",()=>{
+    alert("conneted");
+    // console.log(1110);
+  })
+
+
   socket.on( "Notification",user=>{
     setNames(user);
     console.log(user);
@@ -31,17 +37,14 @@ let displaymes=(name)=>{
   if(name!="" ){
   toast(`New review is Posted by ${name}`,{
  position:toast.POSITION.TOP_CENTER
-
   });
-   setLog(false);  
+  setLog(false);
 }
+
 }
 
 useEffect(()=>{
-  socket.on("connect",()=>{
-    alert("conneted");
-    console.log(1110);
-  })
+ 
 setLog(true);
   },[])
 

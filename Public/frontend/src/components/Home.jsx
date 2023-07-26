@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import "./home.css"
 import { Link, useNavigate } from 'react-router-dom'
 import socket from "../socket";
+import {FacebookShareButton, TwitterShareButton} from 'react-share'
 
 // import { search } from '../../../../Backend/Routes/UserRoutes'
 const Home = () => {
@@ -28,7 +29,7 @@ const fetchReviews = async(pgno) =>{
   // console.log(currentpage);
   filters= pvstate.filter;
   sortvalue=pvstate.sortby;
-
+  console.log(searchname);
 const { data}= await axios.get(`/api/feedback?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,
 {headers: {
         "Content-Type": "application/json",
@@ -144,12 +145,13 @@ console.log(filters);
   setReview(data.response.feedback)
   console.log(data.response.total);
 setPagelimit(data.response.total);
-  // setSearchname("");
+  setSearchname("");
 }
 const resetall=()=>{
-
+  // setSearchname("");
   fetchReviews();
-  setSearchname("");
+  // console.log(review)
+  
 }
 
 
@@ -309,6 +311,25 @@ ms-3'>
               <button className='badge btn-primary m-1'><i className="fa-brands fa-twitter  "></i>    </button>
               <button className='badge btn-primary  m-1'><i className="fa-brands fa-instagram "></i>    </button>
            </div>
+           <div className='float-end'>
+         {/* <FacebookShareButton 
+         url=`http://localhost:3000//Review/${rev._id}`
+         
+         
+         >
+         <i className="fa-brands fa-facebook  "></i> 
+
+
+         </FacebookShareButton> */}
+
+
+
+           </div>
+
+
+
+
+
 {/* <i className="fa-brands fa-instagram float-end  "></i>
 <i className="fa-brands fa-twitter float-end"></i>
 
