@@ -19,7 +19,7 @@ function App() {
   const [log, setLog]= useState(true);
 
   socket.on("connect",()=>{
-    alert("conneted");
+    // alert("conneted");
     // console.log(1110);
   })
 

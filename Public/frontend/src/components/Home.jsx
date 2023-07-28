@@ -30,7 +30,7 @@ const fetchReviews = async(pgno) =>{
   filters= pvstate.filter;
   sortvalue=pvstate.sortby;
   console.log(searchname);
-const { data}= await axios.get(`/api/feedback?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,
+const { data}= await axios.get(`https://feedbacksystem-p2.onrender.com/api/feedback?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,
 {headers: {
         "Content-Type": "application/json",
          Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
@@ -69,8 +69,9 @@ if(localStorage.getItem("Editing")){
     setCurrentpage(1);
 fetchReviews();
 colorbody();
+
 socket.on("connect",()=>{
-  alert("conneted");
+  // alert("conneted");
   console.log(1110);
 })
 // ReviewSorting();
@@ -137,7 +138,7 @@ if(e.target.name=='filter'){
 setCurrentpage(1);
 console.log(sortvalue)
 console.log(filters);
-  let{data} = await axios.get(`/api/feedback?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,{headers: {
+  let{data} = await axios.get(`https://feedbacksystem-p2.onrender.com/api/feedback?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,{headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
   }});  

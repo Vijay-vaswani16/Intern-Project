@@ -100,7 +100,7 @@ const Registration = () => {
           console.log("done");
           // this is me /
           const { status } = await axios.post(
-            "/api/users/register",
+            "https://feedbacksystem-p2.onrender.com/api/users/register",
             { name , email , password , Gender, Dob},
             {
               headers: {
@@ -134,7 +134,7 @@ const Registration = () => {
   return (
     <>
     
-  <section className="vh-100">
+  <section className="vh-10">
   <div className="container-fluid">
     <div className="row">
     <div className="col-sm-6 px-0 d-none d-sm-block  border border-4">
@@ -145,21 +145,22 @@ const Registration = () => {
 
       <div className="col-sm-6 text-black border border-3">
 
-        <div className="px-5 mt-4">
-          <i className="fas fa-crow fa-2x me-3 pt-5 mt-xl-4" ></i>
-          <span className="h1 fw-bold "> Feedbacks 
-            
-    
-          </span>
+        
+
+        <div className="d-flex align-items-center h-custom-2 pˀˀ-3 ms-xl-4  pt-2 pt-xl-0 mt-xl-n5  ">
+
+          <form  id='formc' onSubmit={submitRegistration} className='mt-4'>
+
+           <div className="mb-4">
+          <i className="fas fa-crow fa-2x me-3 pt-5 mt-4" ></i>
+          <span className="h2 fw-bold "> Feedbacks 
+          </span> 
         </div>
 
-        <div className="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-1 pt-5 pt-xl-0 mt-xl-n5 ">
 
-          <form  id='formc' onSubmit={submitRegistration} >
+            <h3 className="fw-normal mb-1 mt-2 pb-2"  id='lettersps'>Registration</h3>
 
-            <h3 className="fw-normal mb-2 pb-3"  id='lettersps'>Registration</h3>
-
-            <div className="form-outline mb-3">
+            <div className="form-outline mb-1">
                     <small>Name</small>
                   <input type="text" name='name'  className="form-control border-bottom border-2 " 
                   value={user.name}
@@ -167,7 +168,7 @@ const Registration = () => {
                   />
                 </div>
             
-            <div className="form-outline mb-4">
+            <div className="form-outline mb-1">
                 <small>Email address</small>
               <input type="email" id="form2Example18" className={`form-control border-bottom  border-2
               `}
@@ -214,7 +215,7 @@ const Registration = () => {
 </div>
 
 </div>
-<div className="form-outline mb-4">
+<div className="form-outline mb-2">
                     <small>DOB</small>
                   <input type="date"  onChange={validateCre} name='Dob' value={user.Dob}className="form-control  border-bottom border-2 form-control-lg" />
                   {/* <label className="form-label" for="form3Example9">DOB</label> */}
@@ -245,7 +246,7 @@ const Registration = () => {
 
             </div>
 
-            <div className="d-flex justify-content-end pt-3">
+            <div className="d-flex justify-content-end ">
                   <button type="reset" className="btn btn-light btn">Reset all</button>
                 
                   <button type="submit"  className="btn btn-warning btn ms-2">Register</button>

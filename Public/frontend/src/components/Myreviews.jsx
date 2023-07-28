@@ -29,7 +29,7 @@ let userid;
 let [usedid, setUsedid]= useState(undefined);
 
 const getUser = async() =>{
-  const { data } = await axios.get("/api/users/me", {
+  const { data } = await axios.get("https://feedbacksystem-p2.onrender.com/api/users/me", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
@@ -60,7 +60,7 @@ if(usedid!=undefined){
 }
 
 console.log(userid)
-const { data}= await axios.get(`/api/feedback/${userid}?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,
+const { data}= await axios.get(`https://feedbacksystem-p2.onrender.com/api/feedback/${userid}?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,
 {headers: {
       "Content-Type": "application/json",
        Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
@@ -157,7 +157,7 @@ return  ans;
 
 let DeleteReview=async(RevId)=>{
   console.log(localStorage.getItem("jwtlogin"))
-const { data } = await axios.delete(`/api/feedback/${RevId}`, {
+const { data } = await axios.delete(`https://feedbacksystem-p2.onrender.com/api/feedback/${RevId}`, {
  headers: {
    "Content-Type": "application/json",
    Authorization:`Bearer ${localStorage.getItem("jwtlogin")}`,
@@ -192,7 +192,7 @@ setCurrentpage(1);
 // console.log(filters);
 userid=user._id ;
 // console.log(userid);
-let{data} = await axios.get(`/api/feedback/${userid}?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,{headers: {
+let{data} = await axios.get(`https://feedbacksystem-p2.onrender.com/api/feedback/${userid}?searchby=${searchname}&sortBy=${sortvalue}&filter=${filters}&page=${pgno}`,{headers: {
   "Content-Type": "application/json",
   Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
 }});  

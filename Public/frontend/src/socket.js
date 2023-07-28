@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const URL = "http://localhost:8003";
+const URL = "https://feedbacksystem-p2.onrender.com";
 
 const socket = io(URL, {
   reconnection: false,

@@ -15,7 +15,7 @@ var ava=30;
 
 
 const getUser = async() =>{
-  const { data } = await axios.get("/api/users/me", {
+  const { data } = await axios.get("https://feedbacksystem-p2.onrender.com/api/users/me", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,

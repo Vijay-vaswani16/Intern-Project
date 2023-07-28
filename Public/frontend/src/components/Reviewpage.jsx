@@ -49,7 +49,7 @@ setHoverstar(undefined)
 }
 
 const getUser = async() =>{
-  const { data } = await axios.get("/api/users/me", {
+  const { data } = await axios.get("https://feedbacksystem-p2.onrender.com/api/users/me", {
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
@@ -82,7 +82,7 @@ let Editdetail=async()=>{
   revId= localStorage.getItem("Editing")
   // console.log(revId);  
   
-  let { data, status } =await axios.get(`/api/feedback/Review/${revId}`,{headers: {
+  let { data, status } =await axios.get(`https://feedbacksystem-p2.onrender.com/api/feedback/Review/${revId}`,{headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
   }});
@@ -117,7 +117,7 @@ let validate= async (e)=>{
         if(localStorage.getItem("Editing")){
           let revId=localStorage.getItem("Editing")
           console.log(revId);
-          let { data, status } =await axios.post(`/api/feedback/${revId}`, review,{headers: {
+          let { data, status } =await axios.post(`https://feedbacksystem-p2.onrender.com/api/feedback/${revId}`, review,{headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
           }});
@@ -133,7 +133,7 @@ let validate= async (e)=>{
         }
         // for creating part 
         else{
-          let { data, status } =await axios.post("/api/feedback", review,{headers: {
+          let { data, status } =await axios.post("https://feedbacksystem-p2.onrender.com/api/feedback", review,{headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${localStorage.getItem("jwtlogin")}`,
           }});
